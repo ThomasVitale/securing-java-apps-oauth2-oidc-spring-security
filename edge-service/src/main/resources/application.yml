@@ -9,6 +9,9 @@ spring:
           uri: http://localhost:8000
           predicates:
             - Path=/books/**
+          filters:
+            - TokenRelay
+            - SaveSession
   security:
     oauth2:
       client:
