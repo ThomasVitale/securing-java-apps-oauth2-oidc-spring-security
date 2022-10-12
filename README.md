@@ -1,1 +1,1 @@
-# -securing-java-apps-oauth2-oidc-spring-security
+# Securing Java applications with OAuth2 and OIDC using Spring Security
