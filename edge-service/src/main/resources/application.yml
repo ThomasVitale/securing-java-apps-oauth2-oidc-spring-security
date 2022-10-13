@@ -1,0 +1,29 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: spa-route
+          uri: http://localhost:9004
+          predicates:
+            - Path=/,/*.css,/*.js,/favicon.ico
+        - id: book-route
+          uri: http://localhost:8000
+          predicates:
+            - Path=/books/**
+      default-filters:
+        - TokenRelay
+        - SaveSession
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: edge-service
+            client-secret: polar-keycloak-secret
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/PolarBookshop
