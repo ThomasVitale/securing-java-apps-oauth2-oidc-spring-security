@@ -20,7 +20,7 @@ services:
       - 8080:8080
   
   polar-ui:
-    image: "ghcr.io/polarbookshop/polar-ui:v1"
+    image: "ghcr.io/polarbookshop/polar-ui:demo"
     container_name: "polar-ui"
     ports:
       - 9004:9004
